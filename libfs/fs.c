@@ -307,7 +307,7 @@ void printinfo(struct root_dir_entry_t *entry) {
 
     printf("file: %s, ", entry->filename);
     printf("size: %d, ", entry->size);
-    printf("data_blk: %d", entry->first_idx);
+    printf("data_blk: %d\n", entry->first_idx);
   }
 }
 
