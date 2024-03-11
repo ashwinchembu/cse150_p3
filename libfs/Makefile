@@ -1,4 +1,3 @@
-# Target library
 lib := libfs.a
 
 all: $(lib)
@@ -6,14 +5,11 @@ all: $(lib)
 CC := gcc
 CFLAGS := -Wall -Wextra -Werror -g
 
-# Object files
 OBJS := fs.o disk.o
 
-# Compile object files
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Create static library
 $(lib): $(OBJS)
 	ar rcs $@ $^
 

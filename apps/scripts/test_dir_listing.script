@@ -1,0 +1,9 @@
+MOUNT
+LS      
+CREATE file1
+CREATE file2
+LS      
+DELETE file1
+DELETE file2
+LS     
+UMOUNT

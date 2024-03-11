@@ -1,0 +1,13 @@
+MOUNT
+CREATE file1
+CREATE file2
+CREATE file3
+CREATE file4
+CREATE file5
+CREATE file6
+CREATE file7
+CREATE file8
+CREATE file9
+CREATE file10
+CREATE file11  
+UMOUNT

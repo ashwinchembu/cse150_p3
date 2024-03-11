@@ -1,9 +1,0 @@
-MOUNT
-CREATE test-file-1
-DELETE test-file-1
-CREATE test-file-2
-CREATE test-file-3
-DELETE test-file-2
-DELETE test-file-3
-DELETE non_existent_file
-UMOUNT
