@@ -343,12 +343,15 @@ void thread_fs_cat(void *arg)
 		fs_umount();
 		die("Cannot stat file");
 	}
+	//printf("---before stat\n");
 	if (!stat) {
 		/* Nothing to read, file is empty */
 		printf("Empty file\n");
 		return;
 	}
+	
 	buf = malloc(stat);
+
 	if (!buf) {
 		perror("malloc");
 		fs_umount();
@@ -369,8 +372,9 @@ void thread_fs_cat(void *arg)
 	printf("Content of the file:\n");
 	fwrite(buf, 1, stat, stdout);
 	fflush(stdout);
-
+	
 	free(buf);
+	
 }
 
 void thread_fs_rm(void *arg)

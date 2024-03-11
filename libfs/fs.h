@@ -16,14 +16,6 @@
 /** Maximum number of open files */
 #define FS_OPEN_MAX_COUNT 32
 
-#define FS_SIGNATURE 4543533135304653
-
-#define FAT_EOC 0xFFFF
-
-#define MAX_FILENAME 16
-
-#define EMPTY '\0'
-
 /**
  * fs_mount - Mount a file system
  * @diskname: Name of the virtual disk file

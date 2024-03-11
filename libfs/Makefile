@@ -4,7 +4,7 @@ lib := libfs.a
 all: $(lib)
 
 CC := gcc
-CFLAGS := -Wall -Werror -g
+CFLAGS := -Wall -Wextra -Werror -g
 
 # Object files
 OBJS := fs.o disk.o

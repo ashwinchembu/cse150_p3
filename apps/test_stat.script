@@ -1,0 +1,10 @@
+MOUNT
+CREATE testfile
+OPEN testfile
+WRITE DATA "Hello, world!"
+STAT
+DELETE testfile
+CREATE testfile
+STAT    
+DELETE testfile
+UMOUNT

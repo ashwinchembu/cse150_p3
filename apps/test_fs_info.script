@@ -1,0 +1,7 @@
+MOUNT
+INFO    
+CREATE testfile
+INFO    
+DELETE testfile
+INFO    
+UMOUNT

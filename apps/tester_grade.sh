@@ -267,17 +267,17 @@ READ	4096	FILE	test-file-2
 CLOSE
 UMOUNT
 END_SCRIPT
-    run_test_case ./test_fs.x script test.fs overwrite_block.script
+    run_test ./test_fs.x script test.fs overwrite_block.script
 
     line_array+=("$(select_line "${STDOUT}" "6")")
     corr_array+=("Read 4096 bytes from file. Compared 4096 correct.")
 
-    run_test_case ./fs_ref.x info test.fs
+    run_test ./fs_ref.x info test.fs
 
     line_array+=("$(select_line "${STDOUT}" "7")")
     corr_array+=("fat_free_ratio=6/10")
 
-    rm -f test.fs test-file-1 test-file-2
+    rm -f test.fs test-file-1 test-file-2 overwrite_block.script
 
     local score
     compare_lines line_array[@] corr_array[@] score
