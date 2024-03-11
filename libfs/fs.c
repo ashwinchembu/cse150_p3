@@ -587,10 +587,6 @@ int fs_read(int fd, void *buf, size_t count) {
   //initialize iterators
   size_t bytes_copied = 0;
   int bytes_left = (int)count;
-  int total_size = root_dir[file_directory[fd].loc].size - start_block_offset;
-  if (bytes_left >= total_size){
-    bytes_left = total_size;
-  }
 
 
   //check if there are bytes left to read and block is valid
@@ -615,11 +611,11 @@ int fs_read(int fd, void *buf, size_t count) {
     // copy start of chunk to end of count to end of buffer
     memcpy((uint8_t *)buf + bytes_copied, bounce + start_block_offset,
            added_bytes);
+    added_bytes = strlen((char*) bounce + start_block_offset);
 
     // reduce total blocks left to copy
     bytes_left -= added_bytes;
     bytes_copied += added_bytes;
-    total_size -= added_bytes;
 
     //if bytes are left, iterate through
     if (bytes_left > 0) {
