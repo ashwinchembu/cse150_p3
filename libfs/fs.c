@@ -588,7 +588,7 @@ int fs_read(int fd, void *buf, size_t count) {
   size_t bytes_copied = 0;
   int bytes_left = (int)count;
   int total_size = root_dir[file_directory[fd].loc].size - start_block_offset;
-  if (bytes_left > total_size){
+  if (bytes_left >= total_size){
     bytes_left = total_size;
   }
 
